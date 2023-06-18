@@ -14,4 +14,10 @@ public class Movie {
 
     @Column
     private String movie_name;
+
+    @Column
+    private String genre;
+
+    @Column
+    private String releaseYear;
 }

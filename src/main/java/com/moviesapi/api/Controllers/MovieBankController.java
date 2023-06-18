@@ -12,14 +12,15 @@ public class MovieBankController {
     @Autowired
     private MovieRepo movieRepo;
 
-    @GetMapping(value = "/")
-    public String getResponse(){
-        return "Hello World";
-    }
-
     @GetMapping(value = "/movies")
     public List<Movie> getMovies(){
         return movieRepo.findAll();
+    }
+
+    @GetMapping(value = "/movie/{id}")
+    public Movie getMovie(@PathVariable long id){
+      Movie foundMovie = movieRepo.findById(id).get();
+      return foundMovie;
     }
 
     @PostMapping(value = "/add")
