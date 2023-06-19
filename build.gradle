@@ -15,6 +15,9 @@ jar {
 				'Main-Class': 'com.moviesapi.api.ApiApplication'
 		)
 	}
+	from {
+		configurations.runtimeClasspath.filter { it.exists() }.collect { it.isDirectory() ? it : zipTree(it) }
+	}
 }
 
 repositories {
