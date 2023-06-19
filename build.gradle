@@ -8,6 +8,15 @@ group = 'com.moviesapi'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '17'
 
+jar {
+	manifest {
+		attributes(
+
+				'Main-Class': 'com.moviesapi.api.ApiApplication'
+		)
+	}
+}
+
 repositories {
 	mavenCentral()
 }
